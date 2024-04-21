@@ -45,10 +45,9 @@ public class SurvivalGamesLobbyCommandExecutor implements CommandExecutor{
 
             sendPlayerToSGLobby(player);
             insertPlayerIntoLobbyList(player);
-
             sender.sendMessage("Joining SG lobby , have fun :)");
-
             sender.sendMessage(String.format("%d",players));
+
             return true;
         }
 

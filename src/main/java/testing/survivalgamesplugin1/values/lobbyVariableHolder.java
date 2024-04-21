@@ -11,7 +11,6 @@ public class lobbyVariableHolder {
     private final int min_players_to_start  = max_players - 5;
 
 
-
     public Player[] getJoined_players() {
         return joined_players;
     }
