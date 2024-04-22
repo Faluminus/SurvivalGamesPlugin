@@ -1,25 +1,20 @@
-package testing.survivalgamesplugin1;
+package testing.survivalgamesplugin1.Commands;
+
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 import testing.survivalgamesplugin1.values.lobbyVariableHolder;
-
 
 import java.lang.reflect.Array;
 
-
-public class SurvivalGamesLobbyCommandExecutor implements CommandExecutor{
-
+public class SGLobby {
 
     private lobbyVariableHolder lobbyVariables;
     private Player[] joined_players;
     private int players;
     private final int maxPlayers;
-    public SurvivalGamesLobbyCommandExecutor(lobbyVariableHolder lobbyVariables) {
+    public SGLobby(lobbyVariableHolder lobbyVariables) {
         this.joined_players = lobbyVariables.getJoined_players();
         this.players = lobbyVariables.getPlayers();
         this.lobbyVariables = lobbyVariables;
@@ -27,18 +22,17 @@ public class SurvivalGamesLobbyCommandExecutor implements CommandExecutor{
     }
 
 
-    @Override
-    public boolean onCommand(@NotNull CommandSender sender,@NotNull Command command,@NotNull String label, String[] args) {
+    public void PlaySGCommand(CommandSender sender, String[] args){
 
         Player player = (Player) sender;
         boolean isPlayerAlreadyInLobby = CheckIfPlayerIsAlreadyInLobby(player);
+
         if(isPlayerAlreadyInLobby){
 
             sendPlayerToGeneralLobby(player);
             removePlayerFromLobbyList(player);
 
             sender.sendMessage("Leaving SG lobby , se ya next time :)");
-            return true;
         }
 
         if(players != maxPlayers) {
@@ -48,13 +42,9 @@ public class SurvivalGamesLobbyCommandExecutor implements CommandExecutor{
             sender.sendMessage("Joining SG lobby , have fun :)");
             sender.sendMessage(String.format("%d",players));
 
-            return true;
         }
 
-        return false;
     }
-
-
     private void insertPlayerIntoLobbyList(Player player){
         for(int i = 0; i < maxPlayers; i++){
             if(joined_players[i] == null){
@@ -69,7 +59,6 @@ public class SurvivalGamesLobbyCommandExecutor implements CommandExecutor{
             }
         }
     }
-
 
 
     private void removePlayerFromLobbyList(Player player){
