@@ -4,14 +4,17 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 import testing.survivalgamesplugin1.Commands.SGLobby;
+import testing.survivalgamesplugin1.GlobalVariables.gameVariableHolder;
 import testing.survivalgamesplugin1.GlobalVariables.lobbyVariableHolder;
 
 
 public class SurvivalGamesCommandExecutor implements CommandExecutor{
 
-    lobbyVariableHolder variableHolder;
-    public SurvivalGamesCommandExecutor(lobbyVariableHolder variableHolder) {
-        this.variableHolder = variableHolder;
+    gameVariableHolder gameVariableHolder;
+    lobbyVariableHolder lobbyVariableHolder;
+    public SurvivalGamesCommandExecutor(lobbyVariableHolder variableHolder,gameVariableHolder gameVariableHolder) {
+        this.lobbyVariableHolder = variableHolder;
+        this.gameVariableHolder = gameVariableHolder;
     }
 
 
@@ -19,8 +22,10 @@ public class SurvivalGamesCommandExecutor implements CommandExecutor{
     public boolean onCommand(@NotNull CommandSender sender,@NotNull Command command,@NotNull String label, String[] args) {
         switch (command.toString()) {
             case "playSG":
-                new SGLobby(variableHolder).PlaySGCommand(sender,args);
+                new SGLobby(lobbyVariableHolder).PlaySGCommand(sender,args);
                 return true;
+            case "placeChest":
+
             default:
                 return false;
         }

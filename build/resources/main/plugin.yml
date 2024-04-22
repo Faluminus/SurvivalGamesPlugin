@@ -6,3 +6,6 @@ commands:
   playSG:
     description: Sends player to SG lobby or back to general lobby
     usage: /playSG
+  placeChest:
+    description: Places point for chest spawn in SG (Only op can use that),please dont use outside of SG game world
+    usage: /placeChest

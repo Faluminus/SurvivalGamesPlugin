@@ -12,7 +12,7 @@ public class lobbyVariableHolder {
     private final int max_players = 16;
     private final int min_players_to_start  = max_players - 5;
 
-    //SG lobby locations
+    //SG lobby location
     //modify as you want
     private World world;
     private final double xLobby = 0;
