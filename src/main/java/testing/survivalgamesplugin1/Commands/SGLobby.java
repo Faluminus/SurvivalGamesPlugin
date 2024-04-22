@@ -4,7 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import testing.survivalgamesplugin1.values.lobbyVariableHolder;
+import testing.survivalgamesplugin1.GlobalVariables.lobbyVariableHolder;
 
 import java.lang.reflect.Array;
 
@@ -86,7 +86,6 @@ public class SGLobby {
         }
         return false;
     }
-
 
 
     private void sendPlayerToSGLobby(Player player){

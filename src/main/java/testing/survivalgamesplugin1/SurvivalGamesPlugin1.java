@@ -1,6 +1,6 @@
 package testing.survivalgamesplugin1;
 import org.bukkit.plugin.java.JavaPlugin;
-import testing.survivalgamesplugin1.values.lobbyVariableHolder;
+import testing.survivalgamesplugin1.GlobalVariables.lobbyVariableHolder;
 
 public final class SurvivalGamesPlugin1 extends JavaPlugin {
 

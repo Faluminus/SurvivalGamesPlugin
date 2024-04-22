@@ -4,7 +4,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 import testing.survivalgamesplugin1.Commands.SGLobby;
-import testing.survivalgamesplugin1.values.lobbyVariableHolder;
+import testing.survivalgamesplugin1.GlobalVariables.lobbyVariableHolder;
 
 
 public class SurvivalGamesCommandExecutor implements CommandExecutor{
