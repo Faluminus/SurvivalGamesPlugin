@@ -7,10 +7,12 @@ public class lobbyVariableHolder {
 
     //Player oriented lobby variables
     //modify as you want
-    private Player[] joined_players = new Player[0];
+
     private int players = 0;
     private final int max_players = 16;
+    private Player[] joined_players = new Player[max_players];
     private final int min_players_to_start  = max_players - 5;
+
 
     //SG lobby location
     //modify as you want

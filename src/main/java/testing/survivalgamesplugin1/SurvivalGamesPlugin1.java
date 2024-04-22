@@ -25,13 +25,7 @@ public final class SurvivalGamesPlugin1 extends JavaPlugin {
             getLogger().info( "placeChest command registered and can be used");
 
             //game startup
-            while(true) {
-                if (lobbyVariables.getPlayers() >= lobbyVariables.getMinPlayers_to_start()) {
-                    //game
 
-                }
-                Thread.sleep(2000);
-            }
         }
         catch(Exception e){
             getLogger().severe("Error occurred during enabling SurvivalGamesPlugin");

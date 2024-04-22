@@ -34,8 +34,7 @@ public class SGLobby {
 
             sender.sendMessage("Leaving SG lobby , se ya next time :)");
         }
-
-        if(players != maxPlayers) {
+        if(players != maxPlayers && !isPlayerAlreadyInLobby) {
 
             sendPlayerToSGLobby(player);
             insertPlayerIntoLobbyList(player);

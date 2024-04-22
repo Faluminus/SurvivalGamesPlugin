@@ -4,11 +4,15 @@ import testing.survivalgamesplugin1.Commands.PlaceChestSpawnpoint.ChestObject;
 
 public class gameVariableHolder{
 
+    public ChestObject[] chestLocs = new ChestObject[20];
 
-    public ChestObject[] chestLocs = new ChestObject[25];
-
-    public void getNewChestLoc(){
-
+    public void getNewChestLoc(ChestObject chestLoc){
+        for(int i = 0; i < chestLocs.length; i++){
+            if(chestLocs[i] == null){
+                chestLocs[i] = chestLoc;
+                break;
+            }
+        }
     }
 
 }
